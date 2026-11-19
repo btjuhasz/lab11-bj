@@ -32,3 +32,8 @@ def hypotenuse(a, b):
 def square_root(a):
     return math.sqrt(a)
 
+def mul(a, b):
+    return a * b
+
+def exp(a, b):
+    return a ** b
