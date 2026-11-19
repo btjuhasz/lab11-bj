@@ -1,6 +1,6 @@
 # https://github.com/btjuhasz/lab11-bj
-# Partner 1: Benjamin Juhasz
-# Partner 2: Benjamin Juhasz (Working individually)
+# Partner 1 Benjamin Juhasz
+# Partner 2 Benjamin Juhasz (Working individually)
 
 import unittest
 from calculator import *
@@ -14,13 +14,13 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(mul(0, 5), 0)
 
     def test_divide(self):
-        self.assertEqual(div(2, 10), 5)
-        self.assertEqual(div(2, -10), -5)
-        self.assertAlmostEqual(div(2, 5), 2.5)
+        self.assertEqual(div(10, 2), 5)
+        self.assertEqual(div(-10, 2), -5)
+        self.assertAlmostEqual(div(5, 2), 2.5)
 
     def test_log_invalid_argument(self):
         with self.assertRaises(ValueError):
-            logarithm(2, -5)
+            logarithm(-5, 2)
 
     def test_hypotenuse(self):
         self.assertAlmostEqual(hypotenuse(3, 4), 5)
@@ -47,16 +47,16 @@ class TestCalculator(unittest.TestCase):
 
     def test_divide_by_zero(self):
         with self.assertRaises(ZeroDivisionError):
-            div(0, 5)
+            div(5, 0)
 
     def test_logarithm(self):
-        self.assertAlmostEqual(logarithm(2, 8), 3)
-        self.assertAlmostEqual(logarithm(10, 100), 2)
-        self.assertAlmostEqual(logarithm(2, 1), 0)
+        self.assertAlmostEqual(logarithm(8, 2), 3)
+        self.assertAlmostEqual(logarithm(100, 10), 2)
+        self.assertAlmostEqual(logarithm(1, 2), 0)
 
     def test_log_invalid_base(self):
         with self.assertRaises(ValueError):
-            logarithm(1, 5)
+            logarithm(5, -2)
 
 
 if __name__ == "__main__":
